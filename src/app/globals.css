@@ -1742,6 +1742,9 @@ img {
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--border-light);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .device-phone .device-screen {
@@ -2336,51 +2339,62 @@ img {
     grid-template-columns: 1fr;
     gap: 10px;
   }
+  .device-laptop,
+  .device-phone,
+  .device-tablet {
+    padding: 8px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
   .device-topbar {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 10px;
+    padding: 7px 8px;
     gap: 6px;
   }
   .device-logo-text {
-    font-size: 0.66rem;
+    font-size: 0.62rem;
     white-space: nowrap;
     flex-shrink: 0;
   }
   .device-search-mini {
     flex: 1;
     min-width: 0;
-    max-width: 175px;
-    padding: 3px 8px;
-    font-size: 0.52rem;
+    max-width: 165px;
+    padding: 3px 7px;
+    font-size: 0.48rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   .device-nav-tabs {
-    padding: 6px 8px;
-    gap: 6px;
-    font-size: 0.53rem;
+    padding: 5px 8px;
+    gap: 5px;
+    font-size: 0.48rem;
     justify-content: space-between;
-    overflow-x: auto;
+    overflow-x: hidden;
+    white-space: nowrap;
   }
   .device-hero-banner {
-    padding: 14px 12px;
+    padding: 12px 10px;
   }
   .device-mini-cats {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 4px;
-    padding: 8px 6px;
+    gap: 3px;
+    padding: 8px 4px;
   }
   .device-mini-cat-card {
     padding: 3px 2px;
-    border-radius: 6px;
-    font-size: 0.44rem;
+    border-radius: 5px;
+    font-size: 0.4rem;
+    letter-spacing: -0.02em;
     line-height: 1.15;
     min-width: 0;
     overflow: hidden;
-    word-break: break-word;
   }
   .device-mini-cat-card img {
     width: 100%;
