@@ -1727,6 +1727,9 @@ img {
   padding: 10px;
   box-shadow: 0 18px 40px rgba(11, 45, 85, 0.22);
   border: 2px solid #2C3E55;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .device-phone {
@@ -1775,6 +1778,13 @@ img {
   display: flex;
   align-items: center;
   gap: 5px;
+  min-width: 0;
+}
+
+.device-search-mini span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .device-nav-tabs {
@@ -1800,7 +1810,7 @@ img {
 
 .device-mini-cats {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 8px;
   padding: 12px;
   background-color: var(--bg-white);
@@ -1816,6 +1826,8 @@ img {
   font-weight: 600;
   color: var(--navy-primary);
   line-height: 1.2;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .device-mini-cat-card img {
@@ -2037,7 +2049,7 @@ img {
   }
   .hero-grid,
   .andhra-sme-top-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
   .devices-showcase-wrap {
@@ -2067,14 +2079,14 @@ img {
 
 @media (max-width: 960px) {
   .split-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 36px;
   }
   .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .devices-showcase-wrap {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
   .cta-banner {
     flex-direction: column;
@@ -2169,7 +2181,7 @@ img {
   .footer-grid,
   .hero-metrics,
   .andhra-trust-bar {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
   }
   .hero-section {
@@ -2332,59 +2344,81 @@ img {
     gap: 6px;
   }
   .device-logo-text {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     white-space: nowrap;
     flex-shrink: 0;
   }
   .device-search-mini {
-    width: auto;
+    flex: 1;
+    min-width: 0;
+    max-width: 175px;
     padding: 3px 8px;
-    font-size: 0.54rem;
+    font-size: 0.52rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   .device-nav-tabs {
-    padding: 6px 10px;
-    gap: 8px;
-    font-size: 0.58rem;
+    padding: 6px 8px;
+    gap: 6px;
+    font-size: 0.53rem;
+    justify-content: space-between;
+    overflow-x: auto;
   }
   .device-hero-banner {
     padding: 14px 12px;
   }
   .device-mini-cats {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 4px;
     padding: 8px 6px;
   }
   .device-mini-cat-card {
-    padding: 4px 3px;
+    padding: 3px 2px;
     border-radius: 6px;
-    font-size: 0.48rem;
+    font-size: 0.44rem;
     line-height: 1.15;
+    min-width: 0;
+    overflow: hidden;
+    word-break: break-word;
   }
   .device-mini-cat-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
     height: auto;
     border-radius: 4px;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .phone-icon-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
   }
+  .phone-featured-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .phone-featured-card {
+    min-width: 0;
+    overflow: hidden;
+  }
   .phone-featured-card img {
-    height: 68px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
   }
   .phone-featured-card span {
-    font-size: 0.64rem;
-    padding: 5px 4px;
+    font-size: 0.6rem;
+    padding: 5px 3px;
   }
   .tablet-cat-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
     padding: 8px;
+  }
+  .tablet-cat-card {
+    min-width: 0;
+    overflow: hidden;
   }
   .tablet-cat-card img {
     width: 100%;
