@@ -107,7 +107,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/membership">
-                  <ChevronRight size={15} color="#F47721" /> Business Networking
+                  <ChevronRight size={15} color="#F47721" /> Business Circle
                 </Link>
               </li>
               <li>

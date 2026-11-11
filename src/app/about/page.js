@@ -79,7 +79,7 @@ const coreValues = [
   {
     title: 'Collaborative Growth',
     description:
-      'Believing that when MSMEs share knowledge, networks, and opportunities, the entire regional economy rises together.',
+      'Believing that when MSMEs share knowledge, circles, and opportunities, the entire regional economy rises together.',
   },
   {
     title: 'Inclusivity',
@@ -119,7 +119,7 @@ export default function AboutPage() {
     <>
       <PageBanner
         badge="About Us"
-        title="Empowering India's MSME Backbone Through Visibility, Network & Market Access"
+        title="Empowering India's MSME Backbone Through Visibility, Circle & Market Access"
         description="Discover how SME Growth Circle Foundation is transforming local businesses into thriving regional and national enterprises."
       />
 
@@ -163,7 +163,7 @@ export default function AboutPage() {
                 </div>
                 <div className="checklist-item">
                   <CheckCircle2 size={18} className="checklist-icon" />
-                  <span>City-by-City Chapter Network</span>
+                  <span>City-by-City Chapter Circle</span>
                 </div>
                 <div className="checklist-item">
                   <CheckCircle2 size={18} className="checklist-icon" />
@@ -208,12 +208,12 @@ export default function AboutPage() {
               </p>
               <p style={{ marginBottom: '16px', fontSize: '1rem' }}>
                 <strong>SME Growth Circle Foundation</strong> recognized that while large corporations
-                have dedicated marketing engines and national distribution networks, MSMEs lacked an
+                have dedicated marketing engines and national distribution circles, MSMEs lacked an
                 affordable, unified, city-wise platform where they could showcase their strengths, find
                 verified trade partners, and access institutional support.
               </p>
               <p style={{ fontSize: '1rem' }}>
-                What began as a mission to connect local business owners through structured networking
+                What began as a mission to connect local business owners through structured circle connect
                 and buyer-seller dialogues has evolved into <strong>SME Growth Circle</strong>—a
                 holistic phygital (physical + digital) platform helping enterprises grow beyond their
                 shop, office, and city.
@@ -269,7 +269,7 @@ export default function AboutPage() {
               <h3 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>Our Mission</h3>
               <p style={{ fontSize: '1.02rem', marginBottom: '16px' }}>
                 To empower MSMEs through our 5 Pillars of Growth—Visibility, Market Access, Business
-                Growth, Business Network, and Digital Platform—supported by continuous learning,
+                Growth, Business Circle, and Digital Platform—supported by continuous learning,
                 government scheme awareness, and high-impact industry conclaves.
               </p>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

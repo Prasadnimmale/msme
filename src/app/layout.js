@@ -15,7 +15,7 @@ export const metadata = {
     'MSME Business Growth Platform',
     'Indian MSME Directory',
     'MSME Marketplace India',
-    'Andhra Pradesh MSME Network',
+    'Andhra Pradesh MSME Circle',
     'Buyer Seller Connect',
   ],
 };

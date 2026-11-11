@@ -27,7 +27,7 @@ import {
 export const metadata = {
   title: 'Membership | Join SME Growth Circle',
   description:
-    'Become a member of SME Growth Circle Foundation. Discover why to join, membership benefits, networking advantages, eligible MSME categories, and submit your membership enquiry.',
+    'Become a member of SME Growth Circle Foundation. Discover why to join, membership benefits, circle advantages, eligible MSME categories, and submit your membership enquiry.',
 };
 
 const membershipBenefits = [
@@ -53,7 +53,7 @@ const membershipBenefits = [
     color: 'orange',
   },
   {
-    title: 'Access to City Chapter Networking',
+    title: 'Access to City Chapter Circles',
     description:
       'Attend monthly city chapter meets, business referral circles, and cross-district trade delegations.',
     icon: Users,
@@ -91,8 +91,8 @@ export default function MembershipPage() {
     <>
       <PageBanner
         badge="Membership"
-        title="Join India's Premier City-Wise MSME Business Growth Network"
-        description="Unlock national visibility, verified buyer-seller connections, city chapter networking, and institutional support by becoming a member of SME Growth Circle."
+        title="Join India's Premier City-Wise MSME Business Growth Circle"
+        description="Unlock national visibility, verified buyer-seller connections, city chapter circles, and institutional support by becoming a member of SME Growth Circle."
       />
 
       {/* 1. WHY BECOME A MEMBER? */}
@@ -109,7 +109,7 @@ export default function MembershipPage() {
                 In today&apos;s competitive market, relying solely on walk-in customers or word-of-mouth
                 within your neighborhood limits your true enterprise potential. Becoming a member of{' '}
                 <strong>SME Growth Circle</strong> immediately connects your business to a structured
-                state-wide and national network.
+                state-wide and national circle.
               </p>
               <p style={{ marginBottom: '20px', fontSize: '0.98rem' }}>
                 Whether you want to appoint distributors in new districts, source quality raw materials
@@ -172,7 +172,7 @@ export default function MembershipPage() {
               <span className="bar-orange" />
             </div>
             <p className="section-desc">
-              Every member receives comprehensive digital visibility and on-ground networking support
+              Every member receives comprehensive digital visibility and on-ground circle support
               designed to generate real business outcomes.
             </p>
           </div>
@@ -230,14 +230,14 @@ export default function MembershipPage() {
         </div>
       </section>
 
-      {/* 4. BUSINESS NETWORKING BENEFITS */}
+      {/* 4. BUSINESS CIRCLE BENEFITS */}
       <section className="section bg-light-blue">
         <div className="container">
           <div className="split-grid">
             <div className="image-frame">
               <img
                 src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=900&q=80"
-                alt="SME Growth Circle Business Networking Benefits"
+                alt="SME Growth Circle Business Circle Benefits"
               />
               <div className="image-caption-ribbon">
                 <TrendingUp size={20} color="#F4B51B" />
@@ -246,13 +246,13 @@ export default function MembershipPage() {
             </div>
 
             <div>
-              <span className="section-badge">Business Networking Benefits</span>
+              <span className="section-badge">Business Circle Benefits</span>
               <h2 className="section-title">
                 Turn Meaningful Connections Into <span className="text-orange">Long-Term Contracts</span>
               </h2>
               <p style={{ marginBottom: '18px' }}>
                 Unlike generic social groups, SME Growth Circle facilitates structured, agenda-driven
-                business networking where every participant is a verified business owner or decision
+                business circles where every participant is a verified business owner or decision
                 maker.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
@@ -294,7 +294,7 @@ export default function MembershipPage() {
               </h2>
               <p style={{ marginBottom: '20px', fontSize: '1.02rem' }}>
                 Complete the membership enquiry form to register your interest. Our chapter coordinator
-                will guide you through profile onboarding, directory listing, and upcoming networking
+                will guide you through profile onboarding, directory listing, and upcoming circle
                 meets in your city.
               </p>
 

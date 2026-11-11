@@ -58,7 +58,7 @@ const fivePillars = [
   },
   {
     number: '04',
-    title: 'Business Network',
+    title: 'Business Circle',
     description:
       'Build trusted relationships with fellow manufacturers, wholesale traders, industry associations, mentors, and supply chain partners.',
     icon: Users,
@@ -111,7 +111,7 @@ const whyChooseReasons = [
   {
     title: 'High-Impact Offline & Online Events',
     description:
-      'Regular business conclaves, vendor development programmes, exhibitions, and city networking meets to accelerate real business deals.',
+      'Regular business conclaves, vendor development programmes, exhibitions, and city circle meets to accelerate real business deals.',
     icon: CalendarCheck,
     color: 'orange',
   },
@@ -151,7 +151,7 @@ const homeSolutions = [
     href: '/solutions',
   },
   {
-    title: 'Business Networking',
+    title: 'Business Circle',
     description:
       'Collaborate with city chapters, industry peers, channel partners, and business leaders to build lasting commercial alliances.',
     icon: Network,
@@ -256,7 +256,7 @@ const whoCanJoinList = [
   {
     title: 'Startups',
     description:
-      'Emerging innovators and D2C/B2B ventures seeking early market traction, vendor networks, and industry mentorship.',
+      'Emerging innovators and D2C/B2B ventures seeking early market traction, vendor circles, and industry mentorship.',
     icon: Rocket,
     image:
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=80',
@@ -348,7 +348,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="hero-metric-value">City-Wise</div>
-                    <div className="hero-metric-label">Pan-India Trade Network</div>
+                    <div className="hero-metric-label">Pan-India Trade Circle</div>
                   </div>
                 </div>
               </div>
@@ -453,7 +453,7 @@ export default function HomePage() {
               <p style={{ marginBottom: '20px', fontSize: '0.98rem' }}>
                 Millions of capable manufacturers, traders, retailers, and service providers remain
                 restricted to their immediate neighborhood due to limited digital visibility and
-                fragmented trade networks. SME Growth Circle bridges this gap by uniting city-level
+                fragmented trade circles. SME Growth Circle bridges this gap by uniting city-level
                 business chambers, verified digital directories, B2B marketplaces, and on-ground trade
                 events under one roof.
               </p>
@@ -469,7 +469,7 @@ export default function HomePage() {
                 </div>
                 <div className="checklist-item">
                   <CheckCircle2 size={19} className="checklist-icon" />
-                  <span>Multi-District Trade Networking</span>
+                  <span>Multi-District Trade Circle</span>
                 </div>
                 <div className="checklist-item">
                   <CheckCircle2 size={19} className="checklist-icon" />
@@ -513,7 +513,7 @@ export default function HomePage() {
               <span className="bar-orange" />
             </div>
             <p className="section-desc">
-              We combine digital discovery with high-trust business networking to deliver measurable
+              We combine digital discovery with high-trust business circles to deliver measurable
               commercial growth for small and medium businesses.
             </p>
           </div>
@@ -670,7 +670,7 @@ export default function HomePage() {
       <section className="section bg-light-blue">
         <div className="container">
           <div className="section-header">
-            <span className="section-badge orange">Inclusive MSME Network</span>
+            <span className="section-badge orange">Inclusive MSME Circle</span>
             <h2 className="section-title">
               Who Can <span className="text-green">Join?</span>
             </h2>
@@ -787,7 +787,7 @@ export default function HomePage() {
               </p>
               <div className="checklist-item">
                 <CheckCircle2 size={18} className="checklist-icon" />
-                <span>Actionable Networking, Trade Expos &amp; Skill Development</span>
+                <span>Actionable Circle Connect, Trade Expos &amp; Skill Development</span>
               </div>
             </div>
           </div>

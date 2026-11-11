@@ -18,7 +18,7 @@ import {
 export const metadata = {
   title: 'Our Solutions | SME Growth Circle',
   description:
-    'Explore SME Growth Circle solutions: Business Visibility, Market Access, Digital Marketplace, Business Networking, Buyer-Seller Connect, Business Development, Learning & Training, Government Support, and Events & Industry Connect.',
+    'Explore SME Growth Circle solutions: Business Visibility, Market Access, Digital Marketplace, Business Circle, Buyer-Seller Connect, Business Development, Learning & Training, Government Support, and Events & Industry Connect.',
 };
 
 const solutionsList = [
@@ -74,7 +74,7 @@ const solutionsList = [
       'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80',
   },
   {
-    title: 'Business Networking',
+    title: 'Business Circle',
     badge: 'Peer Ecosystem',
     description:
       'Join active city chapters and sector forums where manufacturers, traders, service providers, and professionals collaborate, share referrals, and form strategic alliances.',
@@ -85,7 +85,7 @@ const solutionsList = [
     ],
     icon: Network,
     color: 'blue',
-    ctaText: 'Join the Network',
+    ctaText: 'Join the Circle',
     ctaHref: '/membership',
     image:
       'https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=700&q=80',
@@ -162,7 +162,7 @@ const solutionsList = [
     title: 'Events & Industry Connect',
     badge: 'Expos & Conclaves',
     description:
-      'Gain high-visibility stall showcases and speaking/networking opportunities at regional MSME conclaves, trade shows, industrial exhibitions, and delegation visits.',
+      'Gain high-visibility stall showcases and speaking/circle opportunities at regional MSME conclaves, trade shows, industrial exhibitions, and delegation visits.',
     highlights: [
       'Regional & State MSME Conclaves',
       'Product Exhibitions & Trade Fairs',
@@ -200,7 +200,7 @@ export default function SolutionsPage() {
               <span className="bar-orange" />
             </div>
             <p className="section-desc">
-              Each solution is thoughtfully designed to solve real operational, marketing, and networking
+              Each solution is thoughtfully designed to solve real operational, marketing, and circle
               challenges faced by micro, small, and medium enterprises.
             </p>
           </div>
@@ -281,7 +281,7 @@ export default function SolutionsPage() {
               <h2>Ready to Leverage All 9 Growth Solutions for Your Business?</h2>
               <p>
                 Join SME Growth Circle today and unlock full access to our business directory,
-                marketplace, networking chapters, and industry events.
+                marketplace, circle chapters, and industry events.
               </p>
             </div>
             <div className="cta-actions">

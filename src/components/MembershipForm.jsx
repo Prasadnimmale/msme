@@ -50,7 +50,7 @@ export default function MembershipForm() {
         <div>
           <h3 style={{ fontSize: '1.35rem', margin: 0 }}>Membership Enquiry Form</h3>
           <span style={{ fontSize: '0.86rem', color: '#4A5E78' }}>
-            Enroll your business in India&apos;s City-Wise MSME Growth Network
+            Enroll your business in India&apos;s City-Wise MSME Growth Circle
           </span>
         </div>
       </div>
@@ -169,7 +169,7 @@ export default function MembershipForm() {
             id="member-goals"
             rows={4}
             className="form-textarea"
-            placeholder="Briefly describe your products/services and what kind of buyers, suppliers, or networking support you are looking for..."
+            placeholder="Briefly describe your products/services and what kind of buyers, suppliers, or circle support you are looking for..."
           />
         </div>
       </div>

@@ -18,7 +18,7 @@ import {
 export const metadata = {
   title: 'Events & Industry Connect | SME Growth Circle',
   description:
-    'Explore SME Growth Circle Events: Business Conclaves, Exhibitions, Trade Shows, Buyer-Seller Meets, Networking Events, and Industry Interactions across India.',
+    'Explore SME Growth Circle Events: Business Conclaves, Exhibitions, Trade Shows, Buyer-Seller Meets, Circle Events, and Industry Interactions across India.',
 };
 
 const eventCategories = [
@@ -83,7 +83,7 @@ const eventCategories = [
       'https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&w=800&q=80',
   },
   {
-    title: 'Networking Events',
+    title: 'Circle Events',
     badge: 'City Chapters',
     description:
       'Regular city-level breakfast meets, business mixers, and chapter gatherings where local MSME founders build trust, exchange warm referrals, and form joint ventures.',
@@ -130,8 +130,8 @@ const upcomingCalendar = [
     audience: 'Engineering Units, Food Processors, Exporters & Retailers',
   },
   {
-    title: 'Rayalaseema MSME Vendor Development & Networking Summit',
-    type: 'Networking & Industry Interaction',
+    title: 'Rayalaseema MSME Vendor Development & Circle Summit',
+    type: 'Circle & Industry Interaction',
     location: 'Tirupati, Andhra Pradesh',
     schedule: 'District Chapter Series',
     audience: 'Small Industries, Women Entrepreneurs, Startups & Traders',
@@ -144,7 +144,7 @@ export default function EventsPage() {
       <PageBanner
         badge="Events & Industry Connect"
         title="High-Impact MSME Conclaves, Exhibitions & Buyer-Seller Meets"
-        description="Experience the power of face-to-face business growth through our curated calendar of Business Conclaves, Exhibitions, Trade Shows, Buyer-Seller Meets, Networking Events, and Industry Interactions."
+        description="Experience the power of face-to-face business growth through our curated calendar of Business Conclaves, Exhibitions, Trade Shows, Buyer-Seller Meets, Circle Events, and Industry Interactions."
       />
 
       {/* 1. ALL 6 EVENT CATEGORIES */}

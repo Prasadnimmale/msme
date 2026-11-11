@@ -193,7 +193,7 @@ export default function MadeInAndhraShowcase() {
                 <strong style={{ display: 'block', color: '#0B2D55', fontSize: '1.05rem' }}>
                   26 Districts
                 </strong>
-                <span style={{ fontSize: '0.78rem', color: '#4A5E78' }}>AP MSME Network</span>
+                <span style={{ fontSize: '0.78rem', color: '#4A5E78' }}>AP MSME Circle</span>
               </div>
               <div
                 style={{
