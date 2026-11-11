@@ -41,25 +41,7 @@ export default function ContactPage() {
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-                {/* Office Address Placeholder */}
-                <div className="card" style={{ padding: '22px', flexDirection: 'row', gap: '16px' }}>
-                  <div className="card-icon navy" style={{ marginBottom: 0 }}>
-                    <MapPin size={24} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '1.1rem', marginBottom: '4px' }}>
-                      Registered &amp; Regional Office Address
-                    </h3>
-                    <p style={{ color: '#0B2D55', fontWeight: 500, marginBottom: '4px' }}>
-                      [Office Address Placeholder – Building / Floor / Street Name]
-                    </p>
-                    <p style={{ fontSize: '0.9rem' }}>
-                      [City / District Name, State, PIN Code – India]
-                    </p>
-                  </div>
-                </div>
-
-                {/* Email Placeholder */}
+                {/* Official Email Address */}
                 <div className="card" style={{ padding: '22px', flexDirection: 'row', gap: '16px' }}>
                   <div className="card-icon green" style={{ marginBottom: 0 }}>
                     <Mail size={24} />
@@ -69,28 +51,10 @@ export default function ContactPage() {
                       Official Email Address
                     </h3>
                     <p style={{ color: '#168A45', fontWeight: 600, marginBottom: '4px' }}>
-                      [Email Address Placeholder – e.g., info@your-domain-placeholder.org]
+                      <a href="mailto:growthcirclesme@gmail.com">growthcirclesme@gmail.com</a>
                     </p>
                     <p style={{ fontSize: '0.9rem' }}>
-                      [Membership Desk Email Placeholder]
-                    </p>
-                  </div>
-                </div>
-
-                {/* Phone Placeholder */}
-                <div className="card" style={{ padding: '22px', flexDirection: 'row', gap: '16px' }}>
-                  <div className="card-icon orange" style={{ marginBottom: 0 }}>
-                    <Phone size={24} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: '1.1rem', marginBottom: '4px' }}>
-                      MSME Helpline &amp; Phone
-                    </h3>
-                    <p style={{ color: '#0B2D55', fontWeight: 600, marginBottom: '4px' }}>
-                      [Primary Phone / Mobile Number Placeholder]
-                    </p>
-                    <p style={{ fontSize: '0.9rem' }}>
-                      [Secondary / WhatsApp Support Number Placeholder]
+                      Write to us for membership enquiries, marketplace onboarding, and support.
                     </p>
                   </div>
                 </div>
