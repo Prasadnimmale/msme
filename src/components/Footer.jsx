@@ -1,16 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  TrendingUp,
-  MapPin,
   Mail,
-  Phone,
   ChevronRight,
-  Globe,
-  Share2,
-  MessageSquare,
-  Users,
-  Briefcase,
 } from 'lucide-react';
 
 export default function Footer() {
@@ -39,29 +31,12 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.94rem', marginBottom: '18px' }}>
+            <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.94rem' }}>
               India&apos;s City-Wise MSME Business Visibility &amp; Growth Platform. An initiative by SME
               Growth Circle Foundation helping Manufacturers, Traders, Distributors, Retailers, Service
               Providers, Startups, and Women Entrepreneurs connect, collaborate, and scale across new
               markets.
             </p>
-            <div className="social-links" aria-label="Social Media Links">
-              <a href="#linkedin" className="social-btn" aria-label="LinkedIn Page">
-                <Briefcase size={18} />
-              </a>
-              <a href="#network" className="social-btn" aria-label="Community Network">
-                <Users size={18} />
-              </a>
-              <a href="#website" className="social-btn" aria-label="Official Website">
-                <Globe size={18} />
-              </a>
-              <a href="#updates" className="social-btn" aria-label="Social Updates">
-                <Share2 size={18} />
-              </a>
-              <a href="#community" className="social-btn" aria-label="Discussion Forum">
-                <MessageSquare size={18} />
-              </a>
-            </div>
           </div>
 
           {/* Column 2: Quick Links */}
@@ -153,22 +128,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact Information Placeholders */}
+          {/* Column 4: Contact Information */}
           <div>
             <h3 className="footer-title">Contact Information</h3>
             <div className="footer-contact-list">
-              <div className="footer-contact-item">
-                <div className="footer-contact-icon">
-                  <MapPin size={17} />
-                </div>
-                <div>
-                  <strong style={{ color: '#FFFFFF', display: 'block', fontSize: '0.9rem' }}>
-                    Office Address
-                  </strong>
-                  <span>[Office Address Placeholder – City, State, PIN Code]</span>
-                </div>
-              </div>
-
               <div className="footer-contact-item">
                 <div className="footer-contact-icon">
                   <Mail size={17} />
@@ -177,19 +140,12 @@ export default function Footer() {
                   <strong style={{ color: '#FFFFFF', display: 'block', fontSize: '0.9rem' }}>
                     Official Email
                   </strong>
-                  <span>[Email Address Placeholder]</span>
-                </div>
-              </div>
-
-              <div className="footer-contact-item">
-                <div className="footer-contact-icon">
-                  <Phone size={17} />
-                </div>
-                <div>
-                  <strong style={{ color: '#FFFFFF', display: 'block', fontSize: '0.9rem' }}>
-                    Helpline / Phone
-                  </strong>
-                  <span>[Phone Number Placeholder]</span>
+                  <a
+                    href="mailto:growthcirclesme@gmail.com"
+                    style={{ color: 'rgba(255, 255, 255, 0.9)', wordBreak: 'break-all' }}
+                  >
+                    growthcirclesme@gmail.com
+                  </a>
                 </div>
               </div>
             </div>
