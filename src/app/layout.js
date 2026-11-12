@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata = {
+  metadataBase: new URL('https://www.growthcirclesme.com'),
   title: {
     default: 'SME Growth Circle | India’s City-Wise MSME Business Visibility & Growth Platform',
     template: '%s | SME Growth Circle',
@@ -18,6 +19,17 @@ export const metadata = {
     'Andhra Pradesh MSME Circle',
     'Buyer Seller Connect',
   ],
+  alternates: {
+    canonical: 'https://www.growthcirclesme.com/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   verification: {
     google: 'uYM8KsinE_g7DSKckazg5fckXiPzCBPvOpmds7Mu0yY',
   },
@@ -27,10 +39,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta
-          name="google-site-verification"
-          content="uYM8KsinE_g7DSKckazg5fckXiPzCBPvOpmds7Mu0yY"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

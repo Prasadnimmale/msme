@@ -28,6 +28,9 @@ export const metadata = {
   title: 'Membership | Join SME Growth Circle',
   description:
     'Become a member of SME Growth Circle Foundation. Discover why to join, membership benefits, circle advantages, eligible MSME categories, and submit your membership enquiry.',
+  alternates: {
+    canonical: 'https://www.growthcirclesme.com/membership',
+  },
 };
 
 const membershipBenefits = [

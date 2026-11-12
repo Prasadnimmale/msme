@@ -7,6 +7,9 @@ export const metadata = {
   title: 'Made in AndhraSME.in Marketplace | SME Growth Circle',
   description:
     'Explore the SME Growth Circle & Made in AndhraSME.in Digital Marketplace featuring Manufacturing, Agriculture, Food & Beverages, Handlooms & Textiles, Engineering & Machinery, Chemicals & Plastics, and Home & Lifestyle.',
+  alternates: {
+    canonical: 'https://www.growthcirclesme.com/marketplace',
+  },
 };
 
 export default function MarketplacePage() {

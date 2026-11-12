@@ -7,6 +7,9 @@ export const metadata = {
   title: 'Contact Us | SME Growth Circle Foundation',
   description:
     'Get in touch with SME Growth Circle Foundation for MSME membership, marketplace onboarding, buyer-seller meets, and regional chapter partnerships.',
+  alternates: {
+    canonical: 'https://www.growthcirclesme.com/contact',
+  },
 };
 
 export default function ContactPage() {

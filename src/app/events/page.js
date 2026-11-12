@@ -19,6 +19,9 @@ export const metadata = {
   title: 'Events & Industry Connect | SME Growth Circle',
   description:
     'Explore SME Growth Circle Events: Business Conclaves, Exhibitions, Trade Shows, Buyer-Seller Meets, Circle Events, and Industry Interactions across India.',
+  alternates: {
+    canonical: 'https://www.growthcirclesme.com/events',
+  },
 };
 
 const eventCategories = [

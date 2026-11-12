@@ -34,6 +34,12 @@ import {
   MapPin,
 } from 'lucide-react';
 
+export const metadata = {
+  alternates: {
+    canonical: 'https://www.growthcirclesme.com/',
+  },
+};
+
 const fivePillars = [
   {
     number: '01',

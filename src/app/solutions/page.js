@@ -19,6 +19,9 @@ export const metadata = {
   title: 'Our Solutions | SME Growth Circle',
   description:
     'Explore SME Growth Circle solutions: Business Visibility, Market Access, Digital Marketplace, Business Circle, Buyer-Seller Connect, Business Development, Learning & Training, Government Support, and Events & Industry Connect.',
+  alternates: {
+    canonical: 'https://www.growthcirclesme.com/solutions',
+  },
 };
 
 const solutionsList = [

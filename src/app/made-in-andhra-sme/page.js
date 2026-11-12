@@ -19,6 +19,9 @@ export const metadata = {
   title: 'Made in AndhraSME.in | A Digital Platform for MSMEs',
   description:
     'Made in AndhraSME.in by SME Growth Circle Foundation — Showcase and sell your products & services to the world, discover buyers, suppliers, and business opportunities across Andhra Pradesh and beyond.',
+  alternates: {
+    canonical: 'https://www.growthcirclesme.com/made-in-andhra-sme',
+  },
 };
 
 const portalModules = [

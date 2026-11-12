@@ -23,6 +23,9 @@ export const metadata = {
   title: 'About Us | SME Growth Circle Foundation',
   description:
     'Learn about SME Growth Circle Foundation, our story, vision, mission, objectives, core values, commitment to MSMEs, and our transformative impact on Andhra Pradesh MSMEs.',
+  alternates: {
+    canonical: 'https://www.growthcirclesme.com/about',
+  },
 };
 
 const objectives = [
