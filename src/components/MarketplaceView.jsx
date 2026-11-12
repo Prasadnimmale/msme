@@ -247,7 +247,7 @@ const featuredProducts = [
     location: 'Nellore, AP',
     moq: 'Custom Industrial Spec',
     image:
-      'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=700&q=80',
+      'https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=700&q=80',
   },
 ];
 
