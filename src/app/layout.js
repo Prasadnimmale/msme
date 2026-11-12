@@ -18,12 +18,19 @@ export const metadata = {
     'Andhra Pradesh MSME Circle',
     'Buyer Seller Connect',
   ],
+  verification: {
+    google: 'uYM8KsinE_g7DSKckazg5fckXiPzCBPvOpmds7Mu0yY',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta
+          name="google-site-verification"
+          content="uYM8KsinE_g7DSKckazg5fckXiPzCBPvOpmds7Mu0yY"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
