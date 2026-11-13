@@ -18,7 +18,6 @@ const navItems = [
   { label: 'Made in AndhraSME.in', href: '/made-in-andhra-sme' },
   { label: 'About Us', href: '/about' },
   { label: 'Our Solutions', href: '/solutions' },
-  { label: 'Marketplace', href: '/marketplace' },
   { label: 'Events', href: '/events' },
   { label: 'Membership', href: '/membership' },
   { label: 'Contact Us', href: '/contact' },

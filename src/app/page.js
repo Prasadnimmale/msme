@@ -146,7 +146,7 @@ const homeSolutions = [
       'Showcase your manufactured goods, wholesale supplies, and specialized services to buyers actively sourcing across India.',
     icon: ShoppingBag,
     color: 'green',
-    href: '/marketplace',
+    href: '/made-in-andhra-sme',
   },
   {
     title: 'Buyer-Seller Connect',

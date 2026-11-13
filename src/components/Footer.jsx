@@ -64,11 +64,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/marketplace">
-                  <ChevronRight size={15} color="#249B50" /> Marketplace
-                </Link>
-              </li>
-              <li>
                 <Link href="/events">
                   <ChevronRight size={15} color="#249B50" /> Events
                 </Link>
@@ -96,7 +91,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/marketplace">
+                <Link href="/made-in-andhra-sme">
                   <ChevronRight size={15} color="#F47721" /> Digital Marketplace
                 </Link>
               </li>

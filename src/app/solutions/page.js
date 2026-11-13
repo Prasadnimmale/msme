@@ -55,7 +55,7 @@ const solutionsList = [
     icon: Globe2,
     color: 'green',
     ctaText: 'Unlock New Markets',
-    ctaHref: '/marketplace',
+    ctaHref: '/made-in-andhra-sme',
     image:
       'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=700&q=80',
   },
@@ -71,8 +71,8 @@ const solutionsList = [
     ],
     icon: ShoppingBag,
     color: 'orange',
-    ctaText: 'Visit Marketplace',
-    ctaHref: '/marketplace',
+    ctaText: 'Explore Made in AndhraSME.in',
+    ctaHref: '/made-in-andhra-sme',
     image:
       'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=700&q=80',
   },
@@ -292,8 +292,8 @@ export default function SolutionsPage() {
                 Apply for Membership
                 <ArrowRight size={18} />
               </Link>
-              <Link href="/marketplace" className="btn btn-outline-white">
-                Explore Marketplace
+              <Link href="/contact" className="btn btn-outline-white">
+                Contact Us
               </Link>
             </div>
           </div>
