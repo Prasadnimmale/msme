@@ -28,7 +28,8 @@ const VOID_TAGS = new Set([
  */
 function prioritizeSeoTagsInHead(html) {
   return html.replace(/<head>([\s\S]*?)<\/head>/i, (fullMatch, headInner) => {
-    const tagRegex = /(<title>[\s\S]*?<\/title>|<script\b[^>]*>[\s\S]*?<\/script>|<style\b[^>]*>[\s\S]*?<\/style>|<!--[\s\S]*?-->|<[a-zA-Z][^>]*>)/gi;
+    const tagRegex =
+      /(<title>[\s\S]*?<\/title>|<script\b[^>]*>[\s\S]*?<\/script>|<style\b[^>]*>[\s\S]*?<\/style>|<!--[\s\S]*?-->|<[a-zA-Z][^>]*>)/gi;
     const headTags = headInner.match(tagRegex);
     if (!headTags) return fullMatch;
 
@@ -71,9 +72,17 @@ function prioritizeSeoTagsInHead(html) {
   });
 }
 
+function isTagOrBlockToken(token) {
+  if (!token) return false;
+  return (
+    token.startsWith('<') ||
+    token.startsWith('___PROTECTED_BLOCK_')
+  );
+}
+
 /**
  * Pretty-prints Next.js HTML output for readable `view-source:` inspection in development
- * while preserving all scripts, styles, RSC payloads, and React hydration integrity.
+ * while guaranteeing zero modification to any text node so React 19 hydration succeeds.
  */
 function prettyPrintHtml(rawHtml) {
   if (!rawHtml || !rawHtml.includes('<html')) {
@@ -99,30 +108,34 @@ function prettyPrintHtml(rawHtml) {
     /(<!DOCTYPE[^>]*>|<!--[\s\S]*?-->|<\/?[a-zA-Z][^>]*>|___PROTECTED_BLOCK_\d+___)/g;
   const rawTokens = htmlWithPlaceholders.split(tokenRegex).filter((t) => t !== '');
 
-  const lines = [];
+  let output = '';
   let indent = 0;
   const pad = (depth) => '  '.repeat(Math.max(0, depth));
 
   for (let i = 0; i < rawTokens.length; i++) {
     const token = rawTokens[i];
+    const prevToken = i > 0 ? rawTokens[i - 1] : null;
+    const canBreakBefore = prevToken !== null && isTagOrBlockToken(prevToken) && isTagOrBlockToken(token);
 
     // Protected <script> or <style> block
     const blockMatch = token.match(/^___PROTECTED_BLOCK_(\d+)___$/);
     if (blockMatch) {
       const originalBlock = protectedBlocks[Number(blockMatch[1])];
-      lines.push(`${pad(indent)}${originalBlock}`);
+      if (canBreakBefore) output += `\n${pad(indent)}`;
+      output += originalBlock;
       continue;
     }
 
     // DOCTYPE
     if (/^<!DOCTYPE/i.test(token)) {
-      lines.push(token);
+      output += token;
       continue;
     }
 
     // HTML Comment
     if (token.startsWith('<!--')) {
-      lines.push(`${pad(indent)}${token}`);
+      if (canBreakBefore) output += `\n${pad(indent)}`;
+      output += token;
       continue;
     }
 
@@ -130,7 +143,8 @@ function prettyPrintHtml(rawHtml) {
     const closeMatch = token.match(/^<\/([a-zA-Z0-9-]+)\s*>$/);
     if (closeMatch) {
       indent = Math.max(0, indent - 1);
-      lines.push(`${pad(indent)}${token}`);
+      if (canBreakBefore) output += `\n${pad(indent)}`;
+      output += token;
       continue;
     }
 
@@ -140,55 +154,52 @@ function prettyPrintHtml(rawHtml) {
       const tagName = openMatch[1].toLowerCase();
       const isSelfClosing = VOID_TAGS.has(tagName) || token.endsWith('/>');
 
+      if (canBreakBefore) output += `\n${pad(indent)}`;
+
       if (isSelfClosing) {
-        lines.push(`${pad(indent)}${token}`);
+        output += token;
         continue;
       }
 
-      // Collapse simple leaf element `<tag>short text</tag>` onto one readable line
+      // Collapse simple leaf element `<tag>text</tag>` onto one line without breaking
       const nextToken = rawTokens[i + 1];
       const afterNextToken = rawTokens[i + 2];
       if (
         nextToken &&
-        !nextToken.startsWith('<') &&
-        !nextToken.startsWith('___PROTECTED_BLOCK_') &&
+        !isTagOrBlockToken(nextToken) &&
         afterNextToken &&
-        afterNextToken.toLowerCase() === `</${tagName}>` &&
-        nextToken.length <= 280 &&
-        !nextToken.includes('\n')
+        afterNextToken.toLowerCase() === `</${tagName}>`
       ) {
-        lines.push(`${pad(indent)}${token}${nextToken}${afterNextToken}`);
+        output += `${token}${nextToken}${afterNextToken}`;
         i += 2;
         continue;
       }
 
       // Collapse empty element `<tag></tag>` onto one line
       if (nextToken && nextToken.toLowerCase() === `</${tagName}>`) {
-        lines.push(`${pad(indent)}${token}${nextToken}`);
+        output += `${token}${nextToken}`;
         i += 1;
         continue;
       }
 
-      lines.push(`${pad(indent)}${token}`);
+      output += token;
       indent++;
       continue;
     }
 
-    // Plain text content
-    const trimmed = token.trim();
-    if (trimmed.length > 0) {
-      lines.push(`${pad(indent)}${token}`);
-    }
+    // Text node: NEVER insert a newline before or after a text node so React text hydration matches 100%
+    output += token;
   }
 
-  let formatted = lines.join('\n');
+  // 4. Inject self-removing synchronous cleanup scripts at the end of <head> and end of <body>
+  // to strip standalone tag-to-tag indentation text nodes before React 19 hydration runs.
+  const headCleanupScript = `<script data-dev-pretty-cleanup="head">(function(){var s=document.currentScript;if(s)s.remove();function c(r){var w=document.createTreeWalker(r,4),a=[];while(w.nextNode()){var n=w.currentNode;if(/^\\n[ ]*$/.test(n.nodeValue))a.push(n);}for(var i=0;i<a.length;i++)a[i].remove();}c(document.documentElement);window.__devCleanPretty=c;var o=new MutationObserver(function(){c(document.documentElement);});o.observe(document.documentElement,{childList:true,subtree:true});window.__devPrettyObs=o;window.addEventListener('load',function(){c(document.documentElement);o.disconnect();});})();</script>`;
 
-  // 4. Inject a tiny self-removing dev script at the end of <head> that strips pretty-print
-  // newline text nodes synchronously before React 19 hydration runs on the live DOM.
-  const hydrationSafeCleanupScript = `<script data-dev-pretty-cleanup="true">(function(){var s=document.currentScript;if(s)s.remove();function c(r){var w=document.createTreeWalker(r,4),a=[];while(w.nextNode()){var n=w.currentNode;if(n.nodeValue.indexOf('\\n')!==-1&&n.nodeValue.trim()==='')a.push(n);}for(var i=0;i<a.length;i++)a[i].remove();}c(document.documentElement);var o=new MutationObserver(function(){c(document.documentElement);});o.observe(document.documentElement,{childList:true,subtree:true});window.addEventListener('load',function(){c(document.documentElement);o.disconnect();});})();</script>`;
+  const bodyCleanupScript = `<script data-dev-pretty-cleanup="body">(function(){var s=document.currentScript;if(s)s.remove();if(window.__devCleanPretty)window.__devCleanPretty(document.documentElement);})();</script>`;
 
-  formatted = formatted.replace('  </head>', `    ${hydrationSafeCleanupScript}\n  </head>`);
-  return formatted + '\n';
+  output = output.replace('</head>', `\n    ${headCleanupScript}\n  </head>`);
+  output = output.replace('</body>', `\n    ${bodyCleanupScript}\n  </body>`);
+  return output + '\n';
 }
 
 // Start internal Next.js dev server on INTERNAL_PORT
@@ -226,7 +237,6 @@ const server = http.createServer((req, res) => {
 
   const proxyHeaders = { ...req.headers, host: `localhost:${INTERNAL_PORT}` };
   if (isHtmlRequest) {
-    // Request uncompressed HTML from internal Next.js server so we can format it
     delete proxyHeaders['accept-encoding'];
   }
 

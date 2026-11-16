@@ -45,11 +45,11 @@ export default function Header() {
           <div className="top-ribbon-right">
             <span>
               <MapPin size={14} color="#F4B51B" />
-              CONNECT &bull; EMPOWER &bull; GROW
+              <span>CONNECT &bull; EMPOWER &bull; GROW</span>
             </span>
             <span>
               <ShieldCheck size={14} color="#249B50" />
-              From Andhra For the World
+              <span>From Andhra For the World</span>
             </span>
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function Header() {
 
           <div className="header-actions">
             <Link href="/membership" className="btn btn-green">
-              Join Now
+              <span>Join Now</span>
               <ArrowRight size={17} />
             </Link>
             <button
