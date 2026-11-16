@@ -205,3 +205,4 @@ export function prettyPrintHtml(rawHtml) {
   output = output.replace('</body>', `\n    ${bodyCleanupScript}\n  </body>`);
   return output + '\n';
 }
+
