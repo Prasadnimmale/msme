@@ -5,6 +5,11 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: false,
+  ...(process.env.NODE_ENV === 'development'
+    ? {
+        htmlLimitedBots: /.*/,
+      }
+    : {}),
 };
 
 export default nextConfig;
