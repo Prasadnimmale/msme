@@ -26,3 +26,4 @@ for (const filePath of htmlFiles) {
   fs.writeFileSync(filePath, formattedHtml, 'utf8');
   console.log(` ✓ Pretty-formatted: ${path.relative(process.cwd(), filePath)}`);
 }
+
