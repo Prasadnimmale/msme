@@ -86,10 +86,12 @@ export function prettyPrintHtml(rawHtml) {
   }
 
   // Strip any existing cleanup scripts if formatting is run more than once
-  const cleanedRaw = rawHtml.replace(
-    /<script data-dev-pretty-cleanup="[^"]*">[\s\S]*?<\/script>/gi,
-    ''
-  );
+  const cleanedRaw = rawHtml
+    .replace(/<script data-dev-pretty-cleanup="[^"]*">[\s\S]*?<\/script>/gi, '')
+    .replace(
+      /<link rel="canonical" href="https:\/\/www\.growthcirclesme\.com"\s*\/>/gi,
+      '<link rel="canonical" href="https://www.growthcirclesme.com/"/>'
+    );
 
   // 1. Group SEO metadata tags at the top of <head> for easy identification
   const organizedHtml = prioritizeSeoTagsInHead(cleanedRaw);
