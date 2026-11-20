@@ -46,7 +46,8 @@ export function prioritizeSeoTagsInHead(html) {
         lower.includes('rel="canonical"') ||
         lower.includes('name="robots"') ||
         lower.includes('name="googlebot"') ||
-        lower.includes('name="google-site-verification"')
+        lower.includes('name="google-site-verification"') ||
+        lower.includes('name="msvalidate.01"')
       ) {
         seoTags.push(tag);
       } else if (

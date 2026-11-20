@@ -33,6 +33,9 @@ export const metadata = {
   verification: {
     google: 'uYM8KsinE_g7DSKckazg5fckXiPzCBPvOpmds7Mu0yY',
   },
+  other: {
+    'msvalidate.01': '32CC5943C8D9FA146FC405E9C48CF0AF',
+  },
 };
 
 export default function RootLayout({ children }) {
