@@ -2,14 +2,17 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+const SITE_TITLE = 'SME Growth Circle | India’s MSME Business Growth Platform';
+const SITE_DESCRIPTION =
+  'SME Growth Circle Foundation is India’s city-wise MSME business growth platform connecting manufacturers, traders, and service providers with verified buyers.';
+
 export const metadata = {
   metadataBase: new URL('https://www.growthcirclesme.com'),
   title: {
-    default: 'SME Growth Circle | India’s City-Wise MSME Business Visibility & Growth Platform',
+    default: SITE_TITLE,
     template: '%s | SME Growth Circle',
   },
-  description:
-    'SME Growth Circle Foundation is India’s City-Wise MSME Business Visibility & Growth Platform connecting Manufacturers, Traders, Distributors, Retail Businesses, Service Providers, Startups, and Women Entrepreneurs with buyers, suppliers, and new markets.',
+  description: SITE_DESCRIPTION,
   keywords: [
     'SME Growth Circle',
     'SME Growth Circle Foundation',
@@ -21,6 +24,28 @@ export const metadata = {
   ],
   alternates: {
     canonical: 'https://www.growthcirclesme.com/',
+  },
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: 'https://www.growthcirclesme.com/',
+    siteName: 'SME Growth Circle',
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.growthcirclesme.com/logo.jpg',
+        width: 800,
+        height: 800,
+        alt: 'SME Growth Circle Foundation Official Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ['https://www.growthcirclesme.com/logo.jpg'],
   },
   robots: {
     index: true,
@@ -38,6 +63,59 @@ export const metadata = {
   },
 };
 
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.growthcirclesme.com/#organization',
+      name: 'SME Growth Circle',
+      alternateName: 'SME Growth Circle Foundation',
+      url: 'https://www.growthcirclesme.com/',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.growthcirclesme.com/logo.jpg',
+      },
+      email: 'growthcirclesme@gmail.com',
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '+91-8121672244',
+          email: 'growthcirclesme@gmail.com',
+          contactType: 'customer support',
+          areaServed: 'IN',
+          availableLanguage: ['English', 'Telugu'],
+        },
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.growthcirclesme.com/#website',
+      url: 'https://www.growthcirclesme.com/',
+      name: 'SME Growth Circle',
+      description: SITE_DESCRIPTION,
+      publisher: {
+        '@id': 'https://www.growthcirclesme.com/#organization',
+      },
+      inLanguage: 'en-IN',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.growthcirclesme.com/#webpage',
+      url: 'https://www.growthcirclesme.com/',
+      name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      isPartOf: {
+        '@id': 'https://www.growthcirclesme.com/#website',
+      },
+      about: {
+        '@id': 'https://www.growthcirclesme.com/#organization',
+      },
+      inLanguage: 'en-IN',
+    },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -47,6 +125,10 @@ export default function RootLayout({ children }) {
         <link
           href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body>

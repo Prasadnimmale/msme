@@ -47,7 +47,10 @@ export function prioritizeSeoTagsInHead(html) {
         lower.includes('name="robots"') ||
         lower.includes('name="googlebot"') ||
         lower.includes('name="google-site-verification"') ||
-        lower.includes('name="msvalidate.01"')
+        lower.includes('name="msvalidate.01"') ||
+        lower.includes('property="og:') ||
+        lower.includes('name="twitter:') ||
+        lower.includes('application/ld+json')
       ) {
         seoTags.push(tag);
       } else if (
