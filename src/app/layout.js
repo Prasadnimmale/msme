@@ -60,6 +60,8 @@ export const metadata = {
   },
   other: {
     'msvalidate.01': '32CC5943C8D9FA146FC405E9C48CF0AF',
+    'content-language': 'en-IN',
+    language: 'English',
   },
 };
 
@@ -120,6 +122,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta httpEquiv="content-language" content="en-IN" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

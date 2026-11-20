@@ -48,6 +48,9 @@ export function prioritizeSeoTagsInHead(html) {
         lower.includes('name="googlebot"') ||
         lower.includes('name="google-site-verification"') ||
         lower.includes('name="msvalidate.01"') ||
+        lower.includes('http-equiv="content-language"') ||
+        lower.includes('name="content-language"') ||
+        lower.includes('name="language"') ||
         lower.includes('property="og:') ||
         lower.includes('name="twitter:') ||
         lower.includes('application/ld+json')
