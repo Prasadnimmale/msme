@@ -3,11 +3,46 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, MessageSquare } from 'lucide-react';
 
+const WHATSAPP_NUMBER = '918121672244';
+
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const lines = [
+      '*New Contact Enquiry — SME Growth Circle*',
+      '',
+      `*Full Name:* ${formData.name.trim()}`,
+      `*Organization / Business:* ${formData.company.trim() || 'N/A'}`,
+      `*Email Address:* ${formData.email.trim()}`,
+      `*Phone / Mobile:* ${formData.phone.trim()}`,
+      `*Enquiry Topic:* ${formData.subject}`,
+      `*Message:* ${formData.message.trim()}`,
+    ];
+
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      lines.join('\n')
+    )}`;
+
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
+
     setSubmitted(true);
   };
 
@@ -21,13 +56,28 @@ export default function ContactForm() {
           <CheckCircle2 size={34} />
         </div>
         <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>
-          Thank You for Reaching Out (Static Demo)
+          Thank You for Reaching Out!
         </h3>
         <p style={{ maxWidth: '480px', margin: '0 auto 24px' }}>
-          Your message has been recorded in our static demonstration interface. A representative from{' '}
-          <strong>SME Growth Circle Foundation</strong> will respond to your enquiry shortly.
+          Your enquiry details have been prepared for WhatsApp (<strong>+91 81216 72244</strong>). A
+          representative from <strong>SME Growth Circle Foundation</strong> will respond to your
+          enquiry shortly.
         </p>
-        <button type="button" className="btn btn-navy" onClick={() => setSubmitted(false)}>
+        <button
+          type="button"
+          className="btn btn-navy"
+          onClick={() => {
+            setFormData({
+              name: '',
+              company: '',
+              email: '',
+              phone: '',
+              subject: '',
+              message: '',
+            });
+            setSubmitted(false);
+          }}
+        >
           Send Another Message
         </button>
       </div>
@@ -60,9 +110,12 @@ export default function ContactForm() {
           </label>
           <input
             id="contact-name"
+            name="name"
             type="text"
             className="form-input"
             placeholder="Enter your full name"
+            value={formData.name}
+            onChange={handleChange}
             required
           />
         </div>
@@ -73,9 +126,12 @@ export default function ContactForm() {
           </label>
           <input
             id="contact-company"
+            name="company"
             type="text"
             className="form-input"
             placeholder="Enter your business name"
+            value={formData.company}
+            onChange={handleChange}
           />
         </div>
 
@@ -85,9 +141,12 @@ export default function ContactForm() {
           </label>
           <input
             id="contact-email"
+            name="email"
             type="email"
             className="form-input"
             placeholder="Enter your email address"
+            value={formData.email}
+            onChange={handleChange}
             required
           />
         </div>
@@ -98,9 +157,12 @@ export default function ContactForm() {
           </label>
           <input
             id="contact-phone"
+            name="phone"
             type="tel"
             className="form-input"
             placeholder="Enter your phone number"
+            value={formData.phone}
+            onChange={handleChange}
             required
           />
         </div>
@@ -109,7 +171,14 @@ export default function ContactForm() {
           <label className="form-label" htmlFor="contact-subject">
             Enquiry Topic *
           </label>
-          <select id="contact-subject" className="form-select" required defaultValue="">
+          <select
+            id="contact-subject"
+            name="subject"
+            className="form-select"
+            value={formData.subject}
+            onChange={handleChange}
+            required
+          >
             <option value="" disabled>
               Select Enquiry Subject
             </option>
@@ -132,9 +201,12 @@ export default function ContactForm() {
           </label>
           <textarea
             id="contact-message"
+            name="message"
             rows={4}
             className="form-textarea"
             placeholder="How can SME Growth Circle Foundation assist your business?"
+            value={formData.message}
+            onChange={handleChange}
             required
           />
         </div>

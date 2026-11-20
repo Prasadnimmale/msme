@@ -3,11 +3,50 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Send, Building2 } from 'lucide-react';
 
+const WHATSAPP_NUMBER = '918121672244';
+
 export default function MembershipForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    businessName: '',
+    category: '',
+    sector: '',
+    phone: '',
+    email: '',
+    city: '',
+    goals: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const lines = [
+      '*New Membership Enquiry — SME Growth Circle*',
+      '',
+      `*Full Name / Founder:* ${formData.name.trim()}`,
+      `*Business / Enterprise Name:* ${formData.businessName.trim()}`,
+      `*Business Category:* ${formData.category}`,
+      `*Industry Sector:* ${formData.sector}`,
+      `*Mobile / WhatsApp:* ${formData.phone.trim()}`,
+      `*Official Email:* ${formData.email.trim()}`,
+      `*City / District & State:* ${formData.city.trim()}`,
+      `*Products / Services & Expectations:* ${formData.goals.trim() || 'N/A'}`,
+    ];
+
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      lines.join('\n')
+    )}`;
+
+    if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
+
     setSubmitted(true);
   };
 
@@ -21,16 +60,29 @@ export default function MembershipForm() {
           <CheckCircle2 size={34} />
         </div>
         <h3 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>
-          Membership Enquiry Received (Static Demo)
+          Membership Enquiry Received!
         </h3>
         <p style={{ maxWidth: '480px', margin: '0 auto 24px' }}>
-          Thank you for expressing interest in joining <strong>SME Growth Circle</strong>. Our
-          membership desk will connect with you regarding chapter onboarding and directory verification.
+          Thank you for expressing interest in joining <strong>SME Growth Circle</strong>. Your
+          details have been prepared for WhatsApp (<strong>+91 81216 72244</strong>) and our
+          membership desk will connect with you shortly.
         </p>
         <button
           type="button"
           className="btn btn-navy"
-          onClick={() => setSubmitted(false)}
+          onClick={() => {
+            setFormData({
+              name: '',
+              businessName: '',
+              category: '',
+              sector: '',
+              phone: '',
+              email: '',
+              city: '',
+              goals: '',
+            });
+            setSubmitted(false);
+          }}
         >
           Submit Another Enquiry
         </button>
@@ -64,9 +116,12 @@ export default function MembershipForm() {
           </label>
           <input
             id="member-name"
+            name="name"
             type="text"
             className="form-input"
             placeholder="Enter your full name"
+            value={formData.name}
+            onChange={handleChange}
             required
           />
         </div>
@@ -77,9 +132,12 @@ export default function MembershipForm() {
           </label>
           <input
             id="business-name"
+            name="businessName"
             type="text"
             className="form-input"
             placeholder="Enter registered company / shop name"
+            value={formData.businessName}
+            onChange={handleChange}
             required
           />
         </div>
@@ -88,7 +146,14 @@ export default function MembershipForm() {
           <label className="form-label" htmlFor="member-category">
             Business Category *
           </label>
-          <select id="member-category" className="form-select" required defaultValue="">
+          <select
+            id="member-category"
+            name="category"
+            className="form-select"
+            value={formData.category}
+            onChange={handleChange}
+            required
+          >
             <option value="" disabled>
               Select MSME Category
             </option>
@@ -107,7 +172,14 @@ export default function MembershipForm() {
           <label className="form-label" htmlFor="industry-sector">
             Industry Sector *
           </label>
-          <select id="industry-sector" className="form-select" required defaultValue="">
+          <select
+            id="industry-sector"
+            name="sector"
+            className="form-select"
+            value={formData.sector}
+            onChange={handleChange}
+            required
+          >
             <option value="" disabled>
               Select Industry Sector
             </option>
@@ -128,9 +200,12 @@ export default function MembershipForm() {
           </label>
           <input
             id="member-phone"
+            name="phone"
             type="tel"
             className="form-input"
             placeholder="Enter 10-digit mobile number"
+            value={formData.phone}
+            onChange={handleChange}
             required
           />
         </div>
@@ -141,9 +216,12 @@ export default function MembershipForm() {
           </label>
           <input
             id="member-email"
+            name="email"
             type="email"
             className="form-input"
             placeholder="Enter business email address"
+            value={formData.email}
+            onChange={handleChange}
             required
           />
         </div>
@@ -154,9 +232,12 @@ export default function MembershipForm() {
           </label>
           <input
             id="member-city"
+            name="city"
             type="text"
             className="form-input"
             placeholder="e.g., Visakhapatnam / Vijayawada / Guntur / Tirupati, Andhra Pradesh"
+            value={formData.city}
+            onChange={handleChange}
             required
           />
         </div>
@@ -167,9 +248,12 @@ export default function MembershipForm() {
           </label>
           <textarea
             id="member-goals"
+            name="goals"
             rows={4}
             className="form-textarea"
             placeholder="Briefly describe your products/services and what kind of buyers, suppliers, or circle support you are looking for..."
+            value={formData.goals}
+            onChange={handleChange}
           />
         </div>
       </div>
