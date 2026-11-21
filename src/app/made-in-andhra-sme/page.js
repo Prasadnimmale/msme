@@ -16,9 +16,9 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Made in AndhraSME.in | A Digital Platform for MSMEs',
+  title: 'Made in AndhraSME.in Digital MSME Portal',
   description:
-    'Made in AndhraSME.in by SME Growth Circle Foundation — Showcase and sell your products & services to the world, discover buyers, suppliers, and business opportunities across Andhra Pradesh and beyond.',
+    'Made in AndhraSME.in by SME Growth Circle Foundation helps Andhra Pradesh MSMEs showcase products globally and connect with verified buyers and suppliers.',
   alternates: {
     canonical: 'https://www.growthcirclesme.com/made-in-andhra-sme',
   },

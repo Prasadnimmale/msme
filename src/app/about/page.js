@@ -20,9 +20,9 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'About Us | SME Growth Circle Foundation',
+  title: 'About Us — Vision, Mission & MSME Impact',
   description:
-    'Learn about SME Growth Circle Foundation, our story, vision, mission, objectives, core values, commitment to MSMEs, and our transformative impact on Andhra Pradesh MSMEs.',
+    'Discover SME Growth Circle Foundation’s story, vision, mission, and core values empowering manufacturers, traders, and MSMEs across Andhra Pradesh and India.',
   alternates: {
     canonical: 'https://www.growthcirclesme.com/about',
   },

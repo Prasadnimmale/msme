@@ -16,9 +16,9 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Events & Industry Connect | SME Growth Circle',
+  title: 'MSME Conclaves, Expos & Industry Events',
   description:
-    'Explore SME Growth Circle Events: Business Conclaves, Exhibitions, Trade Shows, Buyer-Seller Meets, Circle Events, and Industry Interactions across India.',
+    'Join SME Growth Circle events across India including MSME business conclaves, trade exhibitions, buyer-seller meets, circle events, and industry summits.',
   alternates: {
     canonical: 'https://www.growthcirclesme.com/events',
   },

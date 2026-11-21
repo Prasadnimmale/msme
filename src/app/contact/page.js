@@ -4,9 +4,9 @@ import ContactForm from '@/components/ContactForm';
 import { Mail, CheckCircle2 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Contact Us | SME Growth Circle Foundation',
+  title: 'Contact Us for MSME Membership & Support',
   description:
-    'Get in touch with SME Growth Circle Foundation for MSME membership, marketplace onboarding, buyer-seller meets, and regional chapter partnerships.',
+    'Contact SME Growth Circle Foundation for MSME membership onboarding, Made in AndhraSME.in listings, buyer-seller meets, and city chapter partnerships.',
   alternates: {
     canonical: 'https://www.growthcirclesme.com/contact',
   },

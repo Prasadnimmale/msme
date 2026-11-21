@@ -16,9 +16,9 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Our Solutions | SME Growth Circle',
+  title: 'Our MSME Business Growth Solutions',
   description:
-    'Explore SME Growth Circle solutions: Business Visibility, Market Access, Digital Marketplace, Business Circle, Buyer-Seller Connect, Business Development, Learning & Training, Government Support, and Events & Industry Connect.',
+    'Explore SME Growth Circle solutions: business visibility, market access, buyer-seller connect, business circles, skill training, and government support.',
   alternates: {
     canonical: 'https://www.growthcirclesme.com/solutions',
   },

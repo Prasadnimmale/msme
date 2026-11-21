@@ -25,9 +25,9 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Membership | Join SME Growth Circle',
+  title: 'Join MSME Membership & Business Circle',
   description:
-    'Become a member of SME Growth Circle Foundation. Discover why to join, membership benefits, circle advantages, eligible MSME categories, and submit your membership enquiry.',
+    'Become a member of SME Growth Circle Foundation to unlock verified directory visibility, buyer-seller matchmaking, city chapter circles, and trade expos.',
   alternates: {
     canonical: 'https://www.growthcirclesme.com/membership',
   },
